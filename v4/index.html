@@ -367,7 +367,7 @@ button{font:inherit;color:inherit}
 .rk .motto{gap:4px}
 .mem .nm{font:700 clamp(22px,2.4vw,26px)/1.2 var(--f-serif)}
 .mem .bio{font-size:15px;line-height:1.6;color:var(--ink2)}
-.vendors.one{grid-template-columns:minmax(0,max-content)}
+.vendors.one{display:flex;flex-wrap:wrap;gap:12px}
 .vendors.one div{padding:14px 22px}
 img.ava{width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);display:block}
 #s9 .kpis{grid-template-columns:minmax(0,1fr)}
@@ -431,6 +431,8 @@ img.ava{width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px sol
 .alt{justify-content:center}
 .ppl{row-gap:16px}
 .ppl div .ic{width:30px;height:30px}
+.vendors.logos div.lg{background:#fff;border:0;border-radius:12px;height:68px;padding:10px 22px;display:flex;align-items:center;justify-content:center;min-width:120px}
+.vendors.logos img{display:block;width:auto;max-width:180px}
 /* Step bar */
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:5;background:#1F232C;border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px))}
 .bar .in{max-width:1240px;margin-inline:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
@@ -671,11 +673,13 @@ img.ava{width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px sol
     <div class="team">
       <div class="mem"><img class="ava" src="img/jenny.jpg" alt="Jenny" width="96" height="96"><b class="nm">Jenny</b><span class="bio">原携程网 CFO<br>原百度资本创始合伙人</span></div>
       <div class="mem"><img class="ava" src="img/brian.jpg" alt="Brian" width="96" height="96"><b class="nm">Brian</b><span class="bio">原优客工场联合创始人、CFO</span></div>
-      <div class="mem"><img class="ava" src="img/light.jpg" alt="Light" width="96" height="96"><b class="nm">Light</b><span class="bio">原 Scale AI 高级工程师</span></div>
+      <div class="mem"><img class="ava" src="img/light.jpg" alt="Light" width="96" height="96"><b class="nm">Light</b><span class="bio">Scale AI 高级工程师</span></div>
     </div>
     <div class="lab">外部服务商</div>
-    <div class="vendors one">
-      <div><svg class="ic"><use href="#i-bank"/></svg><b>Charles Schwab</b></div>
+    <div class="vendors one logos">
+      <div class="lg"><img src="img/schwab.svg" alt="Charles Schwab" height="48"></div>
+      <div class="lg"><img src="img/wise.svg" alt="Wise" height="30"></div>
+      <div class="lg"><img src="img/scale.svg" alt="Scale AI" height="30"></div>
     </div>
   </section>
 
@@ -859,7 +863,7 @@ img.ava{width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px sol
 
   <!-- 21 客户定制 -->
   <section class="slide pg" id="s21" data-nav="产品档位" aria-label="定制风险收益">
-    <h2>按客户<mark>定制</mark>风险收益</h2>
+    <h2><mark>定制</mark>风险收益</h2>
     <div class="tw">
       <table class="tbl prof">
         <thead><tr><th></th>
