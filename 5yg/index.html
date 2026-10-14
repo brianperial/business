@@ -446,6 +446,21 @@ img.ava{width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px sol
 .step-hidden{visibility:hidden;opacity:0}
 [data-step]{transition:opacity .4s ease}
 @media (prefers-reduced-motion:reduce){[data-step]{transition:none}}
+.alt.tier{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:12px 16px;align-items:stretch;justify-content:stretch}
+.alt.tier .tl2{display:flex;flex-direction:column;justify-content:center;padding-right:8px}
+.alt.tier .tl2 small{font-size:12.5px;color:var(--ink2)}
+.alt.tier .tl2 b{font-size:clamp(15px,1.7vw,18px);color:var(--gold)}
+.alt.tier .tc{display:grid;grid-template-columns:auto 1fr 1fr;align-items:center;gap:14px;background:rgba(255,255,255,.04);border-radius:12px;padding:10px 16px}
+.alt.tier .cond{font:600 13px var(--f-num);color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.alt.tier .tc div{display:flex;flex-direction:column}
+.alt.tier .tc small{font-size:12px;color:var(--ink2)}
+.alt.tier .tc b{font:600 clamp(16px,1.8vw,19px) var(--f-num)}
+@media (max-width:900px){.alt.tier{grid-template-columns:minmax(0,1fr)}}
+#b21b .tbl.prof th .cap{display:block;margin:2px 0 0;font-size:12px;font-weight:500;color:var(--ink2)}
+#b21b{gap:12px}
+#b21b .tbl.prof td,#b21b .tbl.prof th{padding-block:5px}
+#b21b .tbl.prof tr.grp th{padding-block:8px 2px}
+#b21b .alt{padding-block:8px}
 </style>
 
 <style>[hidden]{display:none!important}body{margin:0}</style></head><body>
@@ -638,7 +653,7 @@ img.ava{width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px sol
   </section>
 
   <!-- 21 客户定制 -->
-  <section class="slide pg" id="s21" data-nav="产品档位" aria-label="定制风险收益">
+  <section class="slide pg" id="b21b" data-nav="产品档位" aria-label="定制风险收益">
     <h2><mark>定制</mark>风险收益</h2>
     <div class="tw">
       <table class="tbl prof">
@@ -647,16 +662,15 @@ img.ava{width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px sol
           <th><span class="pf"><svg class="ic"><use href="#i-loop"/></svg>Balanced · 平衡</span><span class="cap">稳定现金流</span></th>
           <th><span class="pf"><svg class="ic"><use href="#i-chart"/></svg>Growth · 进取</span><span class="cap">更高长期收益</span></th></tr></thead>
         <tbody>
-          <tr class="grp"><th colspan="4">收益</th></tr><tr class="hi"><th scope="row">目标年化</th><td>20%</td><td>35%</td><td>50%</td></tr><tr class="hi2"><th scope="row">目标客户收益</th><td>10.5%</td><td>20.0%</td><td>29.8%</td></tr><tr class="mn"><th scope="row">预期最低收益</th><td>5%</td><td>-5%</td><td>-15%</td></tr><tr class="grp"><th colspan="4">费用</th></tr><tr class=""><th scope="row">管理费</th><td>2%</td><td>1.5%</td><td>1.2%</td></tr><tr class=""><th scope="row">Hurdle Rate</th><td>5%</td><td>8%</td><td>12%</td></tr><tr class=""><th scope="row">超额分配</th><td>50 / 50</td><td>50 / 50</td><td>50 / 50</td></tr><tr class="grp"><th colspan="4">期限</th></tr><tr class=""><th scope="row">资金锁定期</th><td>1Y</td><td>1Y</td><td>1Y</td></tr><tr class=""><th scope="row">流动性安排</th><td>6M</td><td>6M</td><td>6M</td></tr>
+          <tr class="grp"><th colspan="4">收益</th></tr><tr class="hi"><th scope="row">目标年化</th><td>20%</td><td>35%</td><td>50%</td></tr><tr class="hi2"><th scope="row">目标客户收益</th><td>10.5%</td><td>17.3%</td><td>22.2%</td></tr><tr class="mn"><th scope="row">预期最低收益</th><td>5%</td><td>-5%</td><td>-15%</td></tr><tr class="grp"><th colspan="4">费用</th></tr><tr class=""><th scope="row">管理费</th><td>2%</td><td>1.5%</td><td>1.2%</td></tr><tr class=""><th scope="row">Hurdle Rate</th><td>5%</td><td>8%</td><td>12%</td></tr><tr class=""><th scope="row">超额分配<span class="cap">客户 / BNL</span></th><td>50 / 50</td><td>40 / 60</td><td>30 / 70</td></tr><tr class="grp"><th colspan="4">期限</th></tr><tr class=""><th scope="row">资金锁定期</th><td>1Y</td><td>1Y</td><td>1Y</td></tr><tr class=""><th scope="row">流动性安排</th><td>6M</td><td>6M</td><td>6M</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="alt">
-      <div class="altrow">
-        <div><small>Hurdle</small><b>标普 500 年化收益 + 管理费</b></div>
-        <span class="ar">→</span>
-        <div><small>上浮部分</small><b>阶梯式超额分配</b></div>
-      </div>
+    <div class="alt tier">
+      <div class="tl2"><small>Hurdle 挂钩标普 500</small><b>阶梯式超额分配</b></div>
+      <div class="tc"><span class="cond">标普年化 &lt; 8%</span><div><small>Hurdle</small><b>标普 + 5%</b></div><div><small>超额分配 客户 / BNL</small><b>25 / 75</b></div></div>
+      <div class="tc"><span class="cond">标普年化 ≥ 8%</span><div><small>Hurdle</small><b>13%</b></div><div><small>超额分配 客户 / BNL</small><b>25 / 75</b></div></div>
+    </div>
     </div>
   </section>
 
